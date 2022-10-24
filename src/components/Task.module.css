@@ -1,0 +1,78 @@
+.container{
+  border: 1px solid var(--gray-400);
+  border-radius: 8px;
+  background: var(--gray-500);
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.checking{
+  cursor: pointer;
+  background: transparent;
+  border: 1.5px solid var(--blue-300);
+  border-radius: 8px;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checking:hover{
+  border: 1.5px solid var(--blue-600);
+  background-color: rgba(var(--blue-600-primary), 0.2);
+}
+
+.checkingOn{  
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checking[data-state="checked"]{
+  background-color: var(--purple-600);
+  color: white;
+  border-color: var(--purple-600);
+}
+
+.checking[data-state="checked"]:hover{
+  background-color: var(--purple-300);
+  border-color: var(--purple-300);
+}
+
+.checking[data-state="checked"] + p {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.container p {
+  line-height: 1.4;
+  font-size: 0.875rem;
+  word-break: break-all;
+}
+
+.containerTrash{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+}
+
+.trash{
+  color: var(--gray-300);
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trash:hover{
+  background: var(--gray-400);
+  color: var(--red-300);
+}
