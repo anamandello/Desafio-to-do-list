@@ -4,30 +4,27 @@ import styles from './TaskProgress.module.css'
 interface TaskProps {
   text: string;
   total: number;
-  concluida?: number
+  completed?: number;
   color: 'blue' | 'purple';
 }
 
-export function TaskProgress({ text, total, color, concluida}: TaskProps){
-  const [cor, setCor]= useState('var(--white)');
-  const [isConcluida, setIsConcluida] = useState(false)
+export function TaskProgress({ text, total, color, completed}: TaskProps){
+  const [colorText, setColorText]= useState('var(--white)');
+  const [isCompleted, setIsCompleted] = useState(false)
 
   useEffect(() => {
-    if(typeof(concluida) !== 'undefined')
-      setIsConcluida(true)
+    if(typeof(completed) !== 'undefined')
+      setIsCompleted(true)
 
     switch(color){
       case 'blue':
-        setCor('var(--blue-300)')
-        console.log(cor)
+        setColorText('var(--blue-300)')
         break;
       case 'purple':
-        setCor('var(--purple-300)')
-        console.log(cor)
+        setColorText('var(--purple-300)')
         break
       default:
-        setCor('var(--white)')
-        console.log(cor)
+        setColorText('var(--white)')
         break;
       }
   },[])
@@ -36,12 +33,12 @@ export function TaskProgress({ text, total, color, concluida}: TaskProps){
   return(
     <div>
       <div className={styles.task}>
-        <span style={{color: cor}}>{text}</span>
-        <div className={styles.contador}>
-          {isConcluida &&
-            <span>{concluida} de {total}</span>
+        <span style={{color: colorText}}>{text}</span>
+        <div className={styles.counter}>
+          {isCompleted &&
+            <span>{completed} de {total}</span>
           }
-          {!isConcluida &&
+          {!isCompleted &&
             <span>{total}</span>
           } 
         </div>       

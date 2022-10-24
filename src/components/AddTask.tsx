@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 interface TaskListProps{
   id: string;
-  texto: string;
+  text: string;
   isCheck: boolean;
 }
 
@@ -23,13 +23,13 @@ export function AddTask({addNewTask}: AddTaskProps){
 
   const handleAddNewTask = (event: FormEvent) => {
     event.preventDefault()
-    const novaTask:TaskListProps  = {
+    const newTask:TaskListProps  = {
       id: uuidv4(),
-      texto: valueText,
+      text: valueText,
       isCheck: false
     }
-    if(novaTask.texto.length > 0){
-      addNewTask(novaTask)
+    if(newTask.text.length > 0){
+      addNewTask(newTask)
       setValueText('')
     }
   }

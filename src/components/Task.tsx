@@ -11,7 +11,6 @@ interface taskProps {
 }
 
 export function Task({id, text, isCheck, checking, deleting}: taskProps){
-
   const handleModifyCheck = () => {
     checking(id);
   }

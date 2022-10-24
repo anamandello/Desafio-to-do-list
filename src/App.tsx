@@ -9,15 +9,13 @@ import { useEffect, useState } from 'react'
 
 interface TaskListProps{
   id: string;
-  texto: string;
+  text: string;
   isCheck: boolean;
 }
 
-const tasks: TaskListProps[] = []
-
 function App() {
   const [isEmptyList, setIsEmptyList] = useState(false);
-  const [tasksList, setTasksList] = useState<TaskListProps[]>(tasks)
+  const [tasksList, setTasksList] = useState<TaskListProps[]>([])
   const [numberTasks, setNumberTask] = useState([0, 0])
 
   useEffect(() => {
@@ -29,11 +27,13 @@ function App() {
   }, [tasksList])
 
   const countNumberTasks = () => {
-    setNumberTask([
-      tasksList.filter(item => 
-        item.isCheck === true).length
-      ,
-      tasksList.length]
+    setNumberTask(
+      [
+        tasksList.filter(item => 
+          item.isCheck === true).length
+        ,
+        tasksList.length
+      ]
     )
   }
 
@@ -61,10 +61,10 @@ function App() {
       <Header/>
       <div className={styles.wrapper}>
         <AddTask addNewTask={handleAddTasks}/>
-        <div>
+        <div className={styles.containerTasks}>
           <div className={styles.tasksProgress}>
             <TaskProgress text="Tarefas criadas" total={numberTasks[1]} color='blue'/>
-            <TaskProgress text="Concluídas" total={numberTasks[1]} concluida={numberTasks[0]} color='purple'/>
+            <TaskProgress text="Concluídas" total={numberTasks[1]} completed={numberTasks[0]} color='purple'/>
           </div>
           <div className={styles.muralTasks}>
             {isEmptyList &&
@@ -77,7 +77,7 @@ function App() {
             {!isEmptyList &&
               <div>
                 {tasksList.map(item => (
-                  <Task key={item.id} text={item.texto} id={item.id} isCheck={item.isCheck} checking={handleCheckTask} deleting={handleDeleteTask}/>
+                  <Task key={item.id} text={item.text} id={item.id} isCheck={item.isCheck} checking={handleCheckTask} deleting={handleDeleteTask}/>
                 ))}
               </div>
             }

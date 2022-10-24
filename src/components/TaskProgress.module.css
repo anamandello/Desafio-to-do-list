@@ -10,13 +10,13 @@
   font-weight: bold;
 }
 
-.contador{
+.counter{
   display: flex;
   background: var(--gray-400);
   border-radius: 12px;
 }
 
-.contador span{
+.counter span{
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.125rem 0.5rem;
