@@ -6,11 +6,11 @@ Lista de tarefas que devem ser feitas, é possível adicionar as tarefas de acor
 
 # :hammer: Funcionalidades do projeto
 
-- `Adicionar`: De acordo com os objetivos pessoais, podem ser adicionadas novas tasks.
+- `Adicionar`: De acordo com os objetivos pessoais podem ser adicionadas novas tasks.
 - `Conclusão`: Após concluir uma task pode marca-la como concluída.
 - `Desmarcar`: Caso a task tenha sido marcada incorretamente como concluída, pode-se retirar a marcação.
 - `Exclusão`: Se foi adicionada uma task errada pode-se excluír a mesma.
-- `Progresso`: Para um melhor controle pessoal, há a quantidade de tasks criadas e concluídas.
+- `Progresso`: Para um melhor controle pessoal há a quantidade de tasks criadas e concluídas.
 
 ![Página do projeto com funcionalidades](https://github.com/anamandello/Desafio-to-do-list/blob/main/public/ImagesReadme/ToDoList02.PNG)
 
@@ -26,4 +26,4 @@ Lista de tarefas que devem ser feitas, é possível adicionar as tarefas de acor
 ![Página do projeto com funcionalidades](https://github.com/anamandello/Desafio-to-do-list/blob/main/public/ImagesReadme/ToDoList03.PNG)
 
 # 
-Layout disponibilizado pela RocketSeat no Figma para realização do desenvolvimento.
+Layout disponibilizado pela Rocketseat no Figma para realização do desenvolvimento.
