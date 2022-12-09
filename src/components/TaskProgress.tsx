@@ -36,10 +36,10 @@ export function TaskProgress({ text, total, color, completed}: TaskProps){
         <span style={{color: colorText}}>{text}</span>
         <div className={styles.counter}>
           {isCompleted &&
-            <span>{completed} de {total}</span>
+            <span role='ProgressTasks'>{completed} de {total}</span>
           }
           {!isCompleted &&
-            <span>{total}</span>
+            <span role='TotalTasks'>{total}</span>
           } 
         </div>       
       </div>

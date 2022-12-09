@@ -27,9 +27,9 @@ export function Task({id, text, isCheck, checking, deleting}: taskProps){
               <Check size={10}/>
             </Checkbox.Indicator>
           </Checkbox.Root>
-          <p>{text}</p>
+          <p role='task'>{text}</p>
           <div className={styles.containerTrash}>
-            <div className={styles.trash} onClick={handleDeleteTask}>
+            <div role='trash' className={styles.trash} onClick={handleDeleteTask}>
               <Trash size={16}/>
             </div>
           </div>
